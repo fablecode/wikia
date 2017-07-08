@@ -10,6 +10,6 @@ For example:
 3. [http://naruto.wikia.com/api/v1/](http://naruto.wikia.com/api/v1/)
 4. [http://elderscrolls.wikia.com/api/v1/](http://elderscrolls.wikia.com/api/v1/)
 
-For a quickstart, [http://api.wikia.com/wiki/Quick_Start](click here)
+For a quickstart, http://api.wikia.com/wiki/Quick_Start
 
-For documentation, [http://api.wikia.com/wiki/Documentation](click here)
+For documentation, http://api.wikia.com/wiki/Documentation
