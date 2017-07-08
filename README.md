@@ -1,5 +1,5 @@
 # Wikia
-Wikia is a c# library that makes it easy to access wikia website data.
+Wikia is a C# library that makes it easy to access wikia website data.
 
 Every wiki has its API accessible through URL: {wikidomain}/api/v1/.
 
