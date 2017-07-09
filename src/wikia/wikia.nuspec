@@ -5,7 +5,6 @@
     <version>$version$</version>
     <title>$title$</title>
     <authors>fablecode</authors>
-    <owners>fablecode</owners>
     <licenseUrl>https://github.com/fablecode/wikia/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/fablecode/wikia</projectUrl>
     <iconUrl>http://www.blogherald.com/wp-content/wikia.6.jpg</iconUrl>
