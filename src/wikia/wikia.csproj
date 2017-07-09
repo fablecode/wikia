@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,13 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\WikiActivity.cs" />
+    <Compile Include="Configuration\WikiaConfigurationSection.cs" />
     <Compile Include="Helper\UrlHelper.cs" />
     <Compile Include="IWikiaHttpClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WikiaHttpClient.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\app.config.uninstall.xdt" />
+    <None Include="Configuration\app.config.install.xdt" />
+    <None Include="Configuration\web.config.install.xdt" />
+    <None Include="Configuration\web.config.uninstall.xdt" />
     <None Include="wikia.nuspec" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

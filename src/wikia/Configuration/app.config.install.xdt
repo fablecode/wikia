@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections xdt:Transform="InsertIfMissing">
+    <section name="Wikia"  type="wikia.WikiaConfigurationSection, wikia" xdt:Transform="InsertIfMissing" />
+  </configSections>
+  
+  <!-- Wiki configuration-->
+  <Wikia Domain="WIKI_DOMAIN_HERE" xdt:Transform="InsertIfMissing"/>
+  
+</configuration>
