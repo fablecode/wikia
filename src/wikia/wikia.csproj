@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\UrlHelper.cs" />
+    <Compile Include="IWikiaHttpClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WikiaHttpClient.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
