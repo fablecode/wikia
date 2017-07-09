@@ -49,8 +49,12 @@
     <Compile Include="WikiaHttpClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configuration\app.config.install.xdt" />
-    <None Include="Configuration\app.config.uninstall.xdt" />
+    <None Include="Configuration\app.config.install.xdt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Configuration\app.config.uninstall.xdt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wikia.nuspec" />
   </ItemGroup>
   <ItemGroup />
