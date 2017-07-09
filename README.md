@@ -1,6 +1,8 @@
 
 # Wikia
-https://ci.appveyor.com/api/projects/status/jaf1qdaqbjrsryuw/branch/master?svg=true
+
+![alt text](https://ci.appveyor.com/api/projects/status/jaf1qdaqbjrsryuw/branch/master?svg=true "AppVeyor build status")
+
 Wikia is a C# library that makes it easy to access wikia website data.
 
 Every wiki has its API accessible through URL: {wikidomain}/api/v1/.
