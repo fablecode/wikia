@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using FluentAssertions;
 using NUnit.Framework;
 using wikia.Helper;
@@ -14,14 +13,14 @@ namespace wikia.unit.tests
         [TestCase("")]
         [TestCase("      ")]
         [TestCase("dfsfs/dsfsfsf")]
-        [TestCase("file://awesome file.exe")]
+        [TestCase("file://awesomefile.exe")]
         [TestCase("ldap://lightweightdirectoryaccess/user")]
         public void Given_An_Invalid_Url_Should_Throw_ArgumentException(string url)
         {
             // Arrange
             
             // Act
-            Action act = () => UrlHelper.GenerateUrl(url, default(NameValueCollection));
+            Action act = () => UrlHelper.GenerateUrl(url, default(Dictionary<string, string>));
 
             // Assert
             act
@@ -29,7 +28,7 @@ namespace wikia.unit.tests
         }
 
         [TestCaseSource(nameof(GenerateUrlTestData))]
-        public void Given_A_Valid_Url_And_QueryStringParameters_Should_Generate_Url(string url, NameValueCollection parameters, string expected)
+        public void Given_A_Valid_Url_And_QueryStringParameters_Should_Generate_Url(string url, Dictionary<string, string> parameters, string expected)
         {
             // Arrange
 
@@ -46,7 +45,7 @@ namespace wikia.unit.tests
             {
                 yield return new TestCaseData
                 (
-                    "http://yugioh.wikia.com/api/v1/Articles/List", new NameValueCollection
+                    "http://yugioh.wikia.com/api/v1/Articles/List", new Dictionary<string, string>
                     {
                         {"category", "Card_Tips"},
                         { "limit", "200"}
@@ -55,7 +54,7 @@ namespace wikia.unit.tests
                 );
                 yield return new TestCaseData
                 (
-                    "http://yugioh.wikia.com/api/v1/Articles/List", new NameValueCollection
+                    "http://yugioh.wikia.com/api/v1/Articles/List", new Dictionary<string, string>
                     {
                         {"category", "Card_Tips"},
                         { "limit", "200"},

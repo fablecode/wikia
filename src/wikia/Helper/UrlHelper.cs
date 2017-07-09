@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 
 namespace wikia.Helper
 {
     public class UrlHelper
     {
-        public static string GenerateUrl(string url, NameValueCollection parameters)
+        public static string GenerateUrl(string url, IDictionary<string, string> parameters)
         {
             var isValidUrl = Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
@@ -16,13 +15,12 @@ namespace wikia.Helper
 
             var urlBuilder = new UriBuilder(url);
 
-            if (parameters != null && parameters.Count > 0)
+            if (parameters != null && parameters.Any())
             {
                 IEnumerable<string> segments = 
                 (
-                    from key in parameters.AllKeys
-                    from value in parameters.GetValues(key)
-                    select $"{Uri.EscapeUriString(key)}={Uri.EscapeUriString(value)}"
+                    from keyvalue in parameters
+                    select $"{Uri.EscapeUriString(keyvalue.Key)}={Uri.EscapeUriString(keyvalue.Value)}"
                 )
                 .ToArray();
 
