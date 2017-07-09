@@ -49,10 +49,10 @@
     <Compile Include="WikiaHttpClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configuration\app.config.uninstall.xdt" />
-    <None Include="Configuration\app.config.install.xdt" />
-    <None Include="Configuration\web.config.install.xdt" />
-    <None Include="Configuration\web.config.uninstall.xdt" />
+    <None Include="app.config.uninstall.xdt" />
+    <None Include="app.config.install.xdt" />
+    <None Include="web.config.install.xdt" />
+    <None Include="web.config.uninstall.xdt" />
     <None Include="wikia.nuspec" />
   </ItemGroup>
   <ItemGroup />
