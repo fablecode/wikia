@@ -9,12 +9,7 @@ namespace wikia.unit.tests
     [TestFixture]
     public class UrlHelperTests
     {
-        [TestCase(null)]
-        [TestCase("")]
-        [TestCase("      ")]
-        [TestCase("dfsfs/dsfsfsf")]
-        [TestCase("file://awesomefile.exe")]
-        [TestCase("ldap://lightweightdirectoryaccess/user")]
+        [TestCaseSource(nameof(InvalidUrlTestData))]
         public void Given_An_Invalid_Url_Should_Throw_ArgumentException(string url)
         {
             // Arrange
@@ -25,6 +20,33 @@ namespace wikia.unit.tests
             // Assert
             act
                 .ShouldThrow<ArgumentException>();
+        }
+
+        [Test]
+        public void Given_Null_Parameters_Should_Not_Throw_ArgumentNullException()
+        {
+            // Arrange 
+            var url = "http://www.google.com";
+
+            // Act
+            Action act = () => UrlHelper.GenerateUrl(url, default(Dictionary<string, string>));
+
+            // Assert
+            act
+                .ShouldNotThrow<ArgumentNullException>();
+        }
+
+        [TestCaseSource(nameof(InvalidUrlTestData))]
+        public void Given_An_Invalid_Url_Should_Return_False(string url)
+        {
+            // Arrange
+            const bool expected = false;
+
+            // Act
+           var result = UrlHelper.IsValidUrl(url);
+
+            // Assert
+            result.Should().Be(expected);
         }
 
         [TestCaseSource(nameof(GenerateUrlTestData))]
@@ -39,6 +61,8 @@ namespace wikia.unit.tests
             result.Should().BeEquivalentTo(expected);
         }
 
+        #region Test Data
+
         private static IEnumerable<TestCaseData> GenerateUrlTestData
         {
             get
@@ -49,7 +73,7 @@ namespace wikia.unit.tests
                     {
                         {"category", "Card_Tips"},
                         { "limit", "200"}
-                    }, 
+                    },
                     "http://yugioh.wikia.com/api/v1/Articles/List?category=Card_Tips&limit=200"
                 );
                 yield return new TestCaseData
@@ -64,5 +88,21 @@ namespace wikia.unit.tests
                 );
             }
         }
+
+        private static IEnumerable<TestCaseData> InvalidUrlTestData
+        {
+            get
+            {
+                yield return new TestCaseData(null);
+                yield return new TestCaseData("");
+                yield return new TestCaseData("      ");
+                yield return new TestCaseData("dfsfs/dsfsfsf");
+                yield return new TestCaseData("file://awesomefile.exe");
+                yield return new TestCaseData("ldap://lightweightdirectoryaccess/user");
+
+            }
+        }
+
+        #endregion
     }
 }

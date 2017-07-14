@@ -5,13 +5,21 @@ using System.Linq;
 namespace wikia.Helper
 {
     public class UrlHelper
-    {
+    {            
+        public static string GenerateApiUrl(string absoluteUrl, string relativeUrl)
+        {
+            var absoluteUri = new Uri(absoluteUrl);
+            var relativeUri = new Uri(relativeUrl, UriKind.Relative);
+
+            return new Uri(absoluteUri, relativeUri).AbsoluteUri;
+        }
+
         public static string GenerateUrl(string url, IDictionary<string, string> parameters)
         {
-            var isValidUrl = Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            var isValidUrl = IsValidUrl(url);
 
             if (!isValidUrl)
-                throw new ArgumentException($"{nameof(GenerateUrl)} method: {nameof(url)} parameter is invalid.");
+                throw new ArgumentException($"{nameof(GenerateUrl)} method: {nameof(url)} parameter is invalid or Scheme should be either http or https.");
 
             var urlBuilder = new UriBuilder(url);
 
@@ -28,6 +36,11 @@ namespace wikia.Helper
             }
 
             return urlBuilder.Uri.AbsoluteUri;
+        }
+
+        public static bool IsValidUrl(string url)
+        {
+            return Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
         }
     }
 }
