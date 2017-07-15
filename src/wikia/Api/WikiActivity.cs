@@ -19,7 +19,7 @@ namespace wikia.Api
         {
             Endpoints = new Dictionary<ActivityEndpoint, string>
             {
-                {ActivityEndpoint.LatestActivity, "/Activity/LatestActivityUrl"},
+                {ActivityEndpoint.LatestActivity, "/Activity/LatestActivity"},
                 {ActivityEndpoint.RecentlyChangedArticles, "/Activity/RecentlyChangedArticles"}
             };
         }
@@ -69,9 +69,7 @@ namespace wikia.Api
                 throw new ArgumentNullException(nameof(requestParameters));
 
             var requestUrl = UrlHelper.GenerateApiUrl(_wikiApiUrl, Endpoints[endpoint]);
-
             var parameters = GetParameters(requestParameters);
-
             var json = await _wikiaHttpClient.Get(requestUrl, parameters);
 
             return JsonHelper.Deserialize<ActivityResponseResult>(json);
