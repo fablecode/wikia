@@ -13,8 +13,4 @@
     <copyright>Copyright 2017</copyright>
     <tags>wikia c-sharp appveyor</tags>
   </metadata>
-  <files>
-    <file src="Configuration/app.config.install.xdt" target="content" />
-    <file src="Configuration/app.config.uninstall.xdt" target="content" />
-  </files>
 </package>
