@@ -2,6 +2,6 @@
 {
     public class WikiaSettings
     {
-        public static string RelativeApiUrl => "/api/v1";
+        public static string RelativeApiUrl => "api/v1";
     }
 }

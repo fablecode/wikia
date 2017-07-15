@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wikia.unit.tests", "tests\u
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wikia", "src\wikia\wikia.csproj", "{B87F3727-130A-48EF-B9A1-DF7622A50A1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wikia.integration.tests", "tests\integration\wikia.integration.tests\wikia.integration.tests.csproj", "{8519BDAF-D153-432B-93F7-8EB3EC0566CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{B87F3727-130A-48EF-B9A1-DF7622A50A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B87F3727-130A-48EF-B9A1-DF7622A50A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B87F3727-130A-48EF-B9A1-DF7622A50A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8519BDAF-D153-432B-93F7-8EB3EC0566CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8519BDAF-D153-432B-93F7-8EB3EC0566CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8519BDAF-D153-432B-93F7-8EB3EC0566CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8519BDAF-D153-432B-93F7-8EB3EC0566CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3B1FC6C7-8623-43F8-BB87-FEEF89B8502E} = {FD0B8AF4-D070-4065-A048-BE34DA9601D3}
 		{B87F3727-130A-48EF-B9A1-DF7622A50A1B} = {1F484FA8-A175-4ED5-B28F-AF97BFEE1311}
+		{8519BDAF-D153-432B-93F7-8EB3EC0566CA} = {FD0B8AF4-D070-4065-A048-BE34DA9601D3}
 	EndGlobalSection
 EndGlobal

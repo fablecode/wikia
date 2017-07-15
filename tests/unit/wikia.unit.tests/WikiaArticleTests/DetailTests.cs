@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using FluentAssertions;
-using NSubstitute;
 using NUnit.Framework;
 using wikia.Api;
-using wikia.Models.Activity;
 using wikia.Models.Article.Details;
 
-namespace wikia.unit.tests.WikiaArticleTest
+namespace wikia.unit.tests.WikiaArticleTests
 {
     [TestFixture]
     public class DetailTests

@@ -7,7 +7,7 @@ using wikia.Api;
 using wikia.Configuration;
 using wikia.Models.Article.Simple;
 
-namespace wikia.unit.tests.WikiaArticleTest
+namespace wikia.unit.tests.WikiaArticleTests
 {
     [TestFixture]
     public class SimpleTests

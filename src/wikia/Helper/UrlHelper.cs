@@ -8,6 +8,12 @@ namespace wikia.Helper
     {            
         public static string GenerateApiUrl(string absoluteUrl, string relativeUrl)
         {
+            if (!absoluteUrl.EndsWith("/"))
+                absoluteUrl += "/";
+
+            if (relativeUrl.StartsWith("/"))
+                relativeUrl = relativeUrl.TrimStart('/');
+
             var absoluteUri = new Uri(absoluteUrl);
             var relativeUri = new Uri(relativeUrl, UriKind.Relative);
 

@@ -12,12 +12,12 @@ namespace wikia
             return Get(url, null);
         }
 
-        public Task<string> Get(string url, IDictionary<string, string> parameters)
+        public async Task<string> Get(string url, IDictionary<string, string> parameters)
         {
             url = UrlHelper.GenerateUrl(url, parameters);
 
             using (var client = new HttpClient())
-                return client.GetStringAsync(url);
+                return await client.GetStringAsync(url);
         }
     }
 }

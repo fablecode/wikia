@@ -21,9 +21,9 @@ namespace wikia.Api
         {
             Endpoints = new Dictionary<ArticleEndpoint, string>
             {
-                {ArticleEndpoint.Simple, "/Articles/AsSimpleJson"},
-                {ArticleEndpoint.Details, "/Articles/Details"},
-                {ArticleEndpoint.List, "/Articles/List"}
+                {ArticleEndpoint.Simple, "Articles/AsSimpleJson"},
+                {ArticleEndpoint.Details, "Articles/Details"},
+                {ArticleEndpoint.List, "Articles/List"}
             };
         }
 

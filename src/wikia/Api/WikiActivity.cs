@@ -19,8 +19,8 @@ namespace wikia.Api
         {
             Endpoints = new Dictionary<ActivityEndpoint, string>
             {
-                {ActivityEndpoint.LatestActivity, "/Activity/LatestActivity"},
-                {ActivityEndpoint.RecentlyChangedArticles, "/Activity/RecentlyChangedArticles"}
+                {ActivityEndpoint.LatestActivity, "Activity/LatestActivity"},
+                {ActivityEndpoint.RecentlyChangedArticles, "Activity/RecentlyChangedArticles"}
             };
         }
 
