@@ -110,7 +110,10 @@ namespace wikia.Api
 
         public async Task<NewArticleResultSet> NewArticles(NewArticleRequestParameters requestParameters)
         {
-            if(requestParameters.Limit <= 0 || requestParameters.Limit > 100)
+            if (requestParameters == null)
+                throw new ArgumentNullException(nameof(requestParameters));
+
+            if (requestParameters.Limit <= 0 || requestParameters.Limit > 100)
                 throw new ArgumentOutOfRangeException(nameof(requestParameters.Limit), "Maximum limit is 100.");
 
             if(requestParameters.MinArticleQuality <= 0 || requestParameters.MinArticleQuality > 99)

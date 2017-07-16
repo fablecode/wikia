@@ -58,7 +58,8 @@
     <Compile Include="WikiaArticleTests\DetailEndpointTests.cs" />
     <Compile Include="WikiaArticleTests\PopularArticleTests.cs" />
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
-    <Compile Include="WikiaArticleTests\WikiaArticleTestData.cs" />
+    <Compile Include="WikiaArticleTestData.cs" />
+    <Compile Include="WikiRelatedPagesTests\ArticlesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -69,5 +70,6 @@
       <Name>wikia</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

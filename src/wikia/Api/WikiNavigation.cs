@@ -36,6 +36,5 @@ namespace wikia.Api
 
             return JsonHelper.Deserialize<NavigationResultSet>(json);
         }
-
     }
 }

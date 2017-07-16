@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace wikia.integration.tests.WikiaArticleTests
+namespace wikia.integration.tests
 {
     public static class WikiaArticleTestData
     {
