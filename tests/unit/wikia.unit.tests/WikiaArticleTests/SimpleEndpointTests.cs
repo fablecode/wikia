@@ -10,7 +10,7 @@ using wikia.Models.Article.Simple;
 namespace wikia.unit.tests.WikiaArticleTests
 {
     [TestFixture]
-    public class SimpleTests
+    public class SimpleEndpointTests
     {
         private IWikiArticle _wikiArticle;
 

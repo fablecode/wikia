@@ -8,7 +8,7 @@ using wikia.Models.Article.Details;
 namespace wikia.unit.tests.WikiaArticleTests
 {
     [TestFixture]
-    public class DetailTests
+    public class DetailEndpointTests
     {
         private IWikiArticle _sut;
 
