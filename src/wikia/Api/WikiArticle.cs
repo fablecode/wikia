@@ -8,6 +8,7 @@ using wikia.Helper;
 using wikia.Models.Article;
 using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
+using wikia.Models.Article.PageList;
 using wikia.Models.Article.Simple;
 
 namespace wikia.Api
@@ -82,10 +83,25 @@ namespace wikia.Api
             if (requestParameters == null)
                 throw new ArgumentNullException(nameof(requestParameters));
 
-            var json = await ArticleRequest(ArticleEndpoint.List, () => GetAlphabeticalListParameters(requestParameters));
+            var json = await ArticleRequest(ArticleEndpoint.List, () => GetListParameters(requestParameters));
 
             return Deserialize<UnexpandedListArticleResultSet>(json);
 
+        }
+
+        public Task<ExpandedListArticleResultSet> PageList(string category)
+        {
+            return PageList(new ArticleListRequestParameters { Category = category });
+        }
+
+        public async Task<ExpandedListArticleResultSet> PageList(ArticleListRequestParameters requestParameters)
+        {
+            if (requestParameters == null)
+                throw new ArgumentNullException(nameof(requestParameters));
+
+            var json = await ArticleRequest(ArticleEndpoint.List, () => GetListParameters(requestParameters, true));
+
+            return Deserialize<ExpandedListArticleResultSet>(json);
         }
 
         public Task<string> ArticleRequest(ArticleEndpoint endpoint, Func<IDictionary<string, string>> getParameters)
@@ -113,12 +129,15 @@ namespace wikia.Api
             return parameters;
         }
 
-        private IDictionary<string, string> GetAlphabeticalListParameters(ArticleListRequestParameters requestParameters)
+        private IDictionary<string, string> GetListParameters(ArticleListRequestParameters requestParameters, bool expanded = false)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>
             {
                 ["limit"] = requestParameters.Limit.ToString(),
             };
+
+            if(expanded)
+                parameters["expand"] = "1";
 
             if (!string.IsNullOrEmpty(requestParameters.Category))
                 parameters["category"] = requestParameters.Category;

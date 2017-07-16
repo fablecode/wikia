@@ -5,6 +5,7 @@ using wikia.Enums;
 using wikia.Models.Article;
 using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
+using wikia.Models.Article.PageList;
 using wikia.Models.Article.Simple;
 
 namespace wikia.Api
@@ -17,5 +18,7 @@ namespace wikia.Api
         Task<ExpandedArticleResultSet> Details(params int[] ids);
         Task<UnexpandedListArticleResultSet> AlphabeticalList(string category);
         Task<UnexpandedListArticleResultSet> AlphabeticalList(ArticleListRequestParameters requestParameters);
+        Task<ExpandedListArticleResultSet> PageList(ArticleListRequestParameters requestParameters);
+        Task<ExpandedListArticleResultSet> PageList(string category);
     }
 }

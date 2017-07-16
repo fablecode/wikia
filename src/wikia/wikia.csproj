@@ -63,8 +63,10 @@
     <Compile Include="Models\Article\Details\ArticleDetailsRequestParameters.cs" />
     <Compile Include="Models\Article\Details\ExpandedArticle.cs" />
     <Compile Include="Models\Article\Details\ExpandedArticleResultSet.cs" />
-    <Compile Include="Models\Article\Details\OriginalDimension.cs" />
-    <Compile Include="Models\Article\Details\Revision.cs" />
+    <Compile Include="Models\Article\OriginalDimension.cs" />
+    <Compile Include="Models\Article\PageList\ExpandedArticle.cs" />
+    <Compile Include="Models\Article\PageList\ExpandedListArticleResultSet.cs" />
+    <Compile Include="Models\Article\Revision.cs" />
     <Compile Include="Models\Article\Simple\ContentResult.cs" />
     <Compile Include="Models\Article\Simple\ListElement.cs" />
     <Compile Include="Models\Article\Simple\Section.cs" />
