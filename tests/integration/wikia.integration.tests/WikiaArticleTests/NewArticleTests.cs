@@ -9,7 +9,7 @@ namespace wikia.integration.tests.WikiaArticleTests
     [TestFixture]
     public class NewArticleTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.WikiUrlsTestData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.WikiUrlsTestData))]
         public async Task Given_A_DomainUrl_Should_Successfully_Retrieve_NewArticles(string domainUrl)
         {
             // Arrange

@@ -2,7 +2,6 @@
 using FluentAssertions;
 using NUnit.Framework;
 using wikia.Api;
-using wikia.integration.tests.WikiaArticleTests;
 
 namespace wikia.integration.tests.WikiRelatedPagesTests
 {
@@ -12,7 +11,7 @@ namespace wikia.integration.tests.WikiRelatedPagesTests
         [TestFixture]
         public class WikiVariablesTests
         {
-            [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleIdTestUrlData))]
+            [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleIdTestUrlData))]
             public async Task Given_A_DomainUrl__Should_Retrieve_Related_Articles(string domainUrl, int articleId)
             {
                 // Arrange

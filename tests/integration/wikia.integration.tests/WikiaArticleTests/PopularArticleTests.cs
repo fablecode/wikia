@@ -10,7 +10,7 @@ namespace wikia.integration.tests.WikiaArticleTests
     [TestFixture]
     public class PopularArticleTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.WikiUrlsTestData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.WikiUrlsTestData))]
         public async Task Given_A_DomainUrl_Should_Successfully_Retrieve_Simple_Popular_Articles(string domainUrl)
         {
             // Arrange
@@ -23,7 +23,7 @@ namespace wikia.integration.tests.WikiaArticleTests
             result.Should().NotBeNull();
         }
 
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.WikiUrlsTestData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.WikiUrlsTestData))]
         public async Task Given_A_DomainUrl_Should_Successfully_Retrieve_Detailed_Popular_Articles(string domainUrl)
         {
             // Arrange

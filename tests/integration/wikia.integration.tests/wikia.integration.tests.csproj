@@ -58,8 +58,9 @@
     <Compile Include="WikiaArticleTests\DetailEndpointTests.cs" />
     <Compile Include="WikiaArticleTests\PopularArticleTests.cs" />
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
-    <Compile Include="WikiaArticleTestData.cs" />
+    <Compile Include="WikiaTestData.cs" />
     <Compile Include="WikiRelatedPagesTests\ArticlesTests.cs" />
+    <Compile Include="WikiSearch\SearchList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

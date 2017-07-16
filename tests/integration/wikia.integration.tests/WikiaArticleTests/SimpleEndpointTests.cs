@@ -8,7 +8,7 @@ namespace wikia.integration.tests.WikiaArticleTests
     [TestFixture]
     public class SimpleEndpointTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleIdTestUrlData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleIdTestUrlData))]
         public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Retrieve_Domain_Simple_ArticleInfo(string domainUrl, int articleId)
         {
             // Arrange

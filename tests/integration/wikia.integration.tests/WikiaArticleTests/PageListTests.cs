@@ -8,7 +8,7 @@ namespace wikia.integration.tests.WikiaArticleTests
     [TestFixture]
     public class PageListTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleCategoryTestData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleCategoryTestData))]
         public async Task Given_A_DomainUrl_And_An_Article_Category_Should_Successfully_Retrieve_PageList(string domainUrl, string category)
         {
             // Arrange

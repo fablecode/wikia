@@ -9,7 +9,7 @@ namespace wikia.integration.tests.Mercury
     [TestFixture]
     public class WikiVariablesTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.WikiUrlsTestData))]
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.WikiUrlsTestData))]
         public async Task Given_A_DomainUrl__Should_Retrieve_WikiVariables(string domainUrl)
         {
             // Arrange

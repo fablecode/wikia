@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace wikia.integration.tests
 {
-    public static class WikiaArticleTestData
+    public static class WikiaTestData
     {
         public static IEnumerable<TestCaseData> ArticleIdTestUrlData
         {
@@ -26,6 +26,29 @@ namespace wikia.integration.tests
                 );
             }
         }
+
+        public static IEnumerable<TestCaseData> SearchTestData
+        {
+            get
+            {
+                yield return new TestCaseData
+                (
+                    "http://yugioh.wikia.com",
+                    "yugioh" // Eclipse  Wyvern card page
+                );
+                yield return new TestCaseData
+                (
+                    "http://naruto.wikia.com/",
+                    "rock lee" // Rock character page
+                );
+                yield return new TestCaseData
+                (
+                    "http://elderscrolls.wikia.com/",
+                    "Orc" // Orc page
+                );
+            }
+        }
+
 
         public static IEnumerable<TestCaseData> ArticleCategoryTestData
         {
