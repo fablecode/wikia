@@ -69,6 +69,11 @@
     <Compile Include="Models\Article\OriginalDimension.cs" />
     <Compile Include="Models\Article\PageList\ExpandedArticle.cs" />
     <Compile Include="Models\Article\PageList\ExpandedListArticleResultSet.cs" />
+    <Compile Include="Models\Article\Popular\PopularExpandedArticle.cs" />
+    <Compile Include="Models\Article\Popular\PopularExpandedArticleResultSet.cs" />
+    <Compile Include="Models\Article\Popular\PopularArticle.cs" />
+    <Compile Include="Models\Article\Popular\PopularArticleRequestParameters.cs" />
+    <Compile Include="Models\Article\Popular\PopularListArticleResultSet.cs" />
     <Compile Include="Models\Article\Revision.cs" />
     <Compile Include="Models\Article\Simple\ContentResult.cs" />
     <Compile Include="Models\Article\Simple\ListElement.cs" />

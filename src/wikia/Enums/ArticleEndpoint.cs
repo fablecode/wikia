@@ -5,6 +5,7 @@
         Simple,
         Details,
         List,
-        NewArticles
+        NewArticles,
+        Popular
     }
 }

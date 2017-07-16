@@ -61,6 +61,7 @@
     <Compile Include="WikiaArticleTests\PageListTests.cs" />
     <Compile Include="WikiaArticleTests\AlphabeticalListTests.cs" />
     <Compile Include="WikiaArticleTests\DetailEndpointTests.cs" />
+    <Compile Include="WikiaArticleTests\PopularArticlesTests.cs" />
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
     <Compile Include="WikiActivityTests.cs" />
   </ItemGroup>

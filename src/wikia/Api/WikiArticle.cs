@@ -10,6 +10,7 @@ using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
 using wikia.Models.Article.NewArticles;
 using wikia.Models.Article.PageList;
+using wikia.Models.Article.Popular;
 using wikia.Models.Article.Simple;
 
 namespace wikia.Api
@@ -28,7 +29,8 @@ namespace wikia.Api
                 {ArticleEndpoint.Simple, "Articles/AsSimpleJson"},
                 {ArticleEndpoint.Details, "Articles/Details"},
                 {ArticleEndpoint.List, "Articles/List"},
-                {ArticleEndpoint.NewArticles, "Articles/New"}
+                {ArticleEndpoint.NewArticles, "Articles/New"},
+                {ArticleEndpoint.Popular, "Articles/Popular"}
             };
         }
 
@@ -119,6 +121,26 @@ namespace wikia.Api
             return Deserialize<NewArticleResultSet>(json);
         }
 
+        public Task<PopularListArticleResultSet> PopularArticleSimple(PopularArticleRequestParameters requestParameters)
+        {
+            return PopularArticle<PopularListArticleResultSet>(requestParameters, false);
+        }
+
+        public Task<PopularExpandedArticleResultSet> PopularArticleDetail(PopularArticleRequestParameters requestParameters)
+        {
+            return PopularArticle<PopularExpandedArticleResultSet>(requestParameters, true);
+        }
+
+        public async Task<T> PopularArticle<T>(PopularArticleRequestParameters requestParameters, bool expand)
+        {
+            if (requestParameters.Limit <= 0 || requestParameters.Limit > 10)
+                throw new ArgumentOutOfRangeException(nameof(requestParameters.Limit), "Maximum limit is 10.");
+
+            var json = await ArticleRequest(ArticleEndpoint.Popular, () => GetPopularArticleParameters(requestParameters, true));
+
+            return Deserialize<T>(json);
+        }
+
         public Task<string> ArticleRequest(ArticleEndpoint endpoint, Func<IDictionary<string, string>> getParameters)
         {
             var requestUrl = GenerateApiUrl(endpoint);
@@ -176,6 +198,22 @@ namespace wikia.Api
 
             if (requestParameters.Namespaces.Any())
                 parameters["namespaces"] = string.Join(",", requestParameters.Namespaces);
+
+            return parameters;
+        }
+
+        private IDictionary<string, string> GetPopularArticleParameters(PopularArticleRequestParameters requestParameters, bool expanded = false)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                ["limit"] = requestParameters.Limit.ToString(),
+            };
+
+            if (expanded)
+                parameters["expand"] = "1";
+
+            if (requestParameters.BaseArticleId.HasValue)
+                parameters["basearticleid"] = string.Join(",", requestParameters.BaseArticleId);
 
             return parameters;
         }

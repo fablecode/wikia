@@ -7,6 +7,7 @@ using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
 using wikia.Models.Article.NewArticles;
 using wikia.Models.Article.PageList;
+using wikia.Models.Article.Popular;
 using wikia.Models.Article.Simple;
 
 namespace wikia.Api
@@ -22,5 +23,8 @@ namespace wikia.Api
         Task<ExpandedListArticleResultSet> PageList(ArticleListRequestParameters requestParameters);
         Task<ExpandedListArticleResultSet> PageList(string category);
         Task<NewArticleResultSet> NewArticles(NewArticleRequestParameters requestParameters);
+        Task<PopularListArticleResultSet> PopularArticleSimple(PopularArticleRequestParameters requestParameters);
+        Task<PopularExpandedArticleResultSet> PopularArticleDetail(PopularArticleRequestParameters requestParameters);
+        Task<T> PopularArticle<T>(PopularArticleRequestParameters requestParameters, bool expand);
     }
 }
