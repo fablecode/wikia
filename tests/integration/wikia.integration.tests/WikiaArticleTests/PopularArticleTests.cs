@@ -35,7 +35,5 @@ namespace wikia.integration.tests.WikiaArticleTests
             // Assert
             result.Should().NotBeNull();
         }
-
-
     }
 }

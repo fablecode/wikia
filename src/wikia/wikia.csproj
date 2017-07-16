@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Api\IWikiActivity.cs" />
     <Compile Include="Api\IWikiArticle.cs" />
+    <Compile Include="Api\WikiMercury.cs" />
     <Compile Include="Models\Article\NewArticles\Creator.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleRequestParameters.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleResultSet.cs" />
