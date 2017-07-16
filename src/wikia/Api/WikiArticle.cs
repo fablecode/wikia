@@ -8,6 +8,7 @@ using wikia.Helper;
 using wikia.Models.Article;
 using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
+using wikia.Models.Article.NewArticles;
 using wikia.Models.Article.PageList;
 using wikia.Models.Article.Simple;
 
@@ -26,7 +27,8 @@ namespace wikia.Api
             {
                 {ArticleEndpoint.Simple, "Articles/AsSimpleJson"},
                 {ArticleEndpoint.Details, "Articles/Details"},
-                {ArticleEndpoint.List, "Articles/List"}
+                {ArticleEndpoint.List, "Articles/List"},
+                {ArticleEndpoint.NewArticles, "Articles/New"}
             };
         }
 
@@ -104,6 +106,19 @@ namespace wikia.Api
             return Deserialize<ExpandedListArticleResultSet>(json);
         }
 
+        public async Task<NewArticleResultSet> NewArticles(NewArticleRequestParameters requestParameters)
+        {
+            if(requestParameters.Limit <= 0 || requestParameters.Limit > 100)
+                throw new ArgumentOutOfRangeException(nameof(requestParameters.Limit), "Maximum limit is 100.");
+
+            if(requestParameters.MinArticleQuality <= 0 || requestParameters.MinArticleQuality > 99)
+                throw new ArgumentOutOfRangeException(nameof(requestParameters.MinArticleQuality), "Minimal value of article quality. Ranges from 0 to 99.");
+
+            var json = await ArticleRequest(ArticleEndpoint.NewArticles, () => GetNewArticleParameters(requestParameters));
+
+            return Deserialize<NewArticleResultSet>(json);
+        }
+
         public Task<string> ArticleRequest(ArticleEndpoint endpoint, Func<IDictionary<string, string>> getParameters)
         {
             var requestUrl = GenerateApiUrl(endpoint);
@@ -147,6 +162,20 @@ namespace wikia.Api
 
             if (!string.IsNullOrEmpty(requestParameters.Offset))
                 parameters["offset"] = requestParameters.Offset;
+
+            return parameters;
+        }
+
+        private IDictionary<string, string> GetNewArticleParameters(NewArticleRequestParameters requestParameters)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                ["limit"] = requestParameters.Limit.ToString(),
+                ["minArticleQuality"] = requestParameters.MinArticleQuality.ToString(),
+            };
+
+            if (requestParameters.Namespaces.Any())
+                parameters["namespaces"] = string.Join(",", requestParameters.Namespaces);
 
             return parameters;
         }

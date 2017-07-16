@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WikiaArticleTests\NewArticleTests.cs" />
     <Compile Include="WikiaArticleTests\PageListTests.cs" />
     <Compile Include="WikiaArticleTests\AlphabeticalListTests.cs" />
     <Compile Include="WikiaArticleTests\DetailEndpointTests.cs" />

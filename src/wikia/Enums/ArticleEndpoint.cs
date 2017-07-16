@@ -4,6 +4,7 @@
     {
         Simple,
         Details,
-        List
+        List,
+        NewArticles
     }
 }

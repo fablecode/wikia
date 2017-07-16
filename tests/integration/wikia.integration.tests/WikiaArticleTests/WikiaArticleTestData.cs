@@ -49,5 +49,25 @@ namespace wikia.integration.tests.WikiaArticleTests
             }
         }
 
+        public static IEnumerable<TestCaseData> WikiUrlsTestData
+        {
+            get
+            {
+                yield return new TestCaseData
+                (
+                    "http://yugioh.wikia.com"
+                );
+                yield return new TestCaseData
+                (
+                    "http://naruto.wikia.com/"
+                );
+                yield return new TestCaseData
+                (
+                    "http://elderscrolls.wikia.com/"
+                );
+            }
+        }
+
+
     }
 }

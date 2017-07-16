@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="Api\IWikiActivity.cs" />
     <Compile Include="Api\IWikiArticle.cs" />
+    <Compile Include="Models\Article\NewArticles\Creator.cs" />
+    <Compile Include="Models\Article\NewArticles\NewArticleRequestParameters.cs" />
+    <Compile Include="Models\Article\NewArticles\NewArticleResultSet.cs" />
     <Compile Include="Api\WikiActivity.cs" />
     <Compile Include="Api\WikiArticle.cs" />
     <Compile Include="Configuration\WikiaSettings.cs" />
