@@ -9,7 +9,7 @@ namespace wikia.integration.tests.WikiaArticleTests
     public class DetailEndpointTests
     {
         [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.SimpleTestUrlData))]
-        public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Retrieve_Domain_Article_Details(string domainUrl, int articleId)
+        public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Deserialize_Article_Details(string domainUrl, int articleId)
         {
             // Arrange
             var sut = new WikiArticle(domainUrl);
@@ -19,6 +19,9 @@ namespace wikia.integration.tests.WikiaArticleTests
 
             // Assert
             result.Should().NotBeNull();
+
+            //Note: Details returns a Dictionary instead of an array as per documentation
+            // http://yugioh.wikia.com/api/v1/#!/Articles/getDetails_get_1
         }
     }
 }
