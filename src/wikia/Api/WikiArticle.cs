@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using wikia.Configuration;
 using wikia.Enums;
 using wikia.Helper;
+using wikia.Models.Article;
+using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
 using wikia.Models.Article.Simple;
 
@@ -50,13 +52,10 @@ namespace wikia.Api
             if(id <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id));
 
-            var requestUrl = GenerateApiUrl(ArticleEndpoint.Simple);
-            var parameters = new Dictionary<string, string> { {"id", id.ToString()}};
-            var json = await _wikiaHttpClient.Get(requestUrl, parameters);
+            var json = await ArticleRequest(ArticleEndpoint.Simple, () => new Dictionary<string, string> { ["id"] = id.ToString() });
 
-            return JsonHelper.Deserialize<ContentResult>(json);
+            return Deserialize<ContentResult>(json);
         }
-
 
         public Task<ExpandedArticleResultSet> Details(params int[] ids)
         {
@@ -68,11 +67,32 @@ namespace wikia.Api
             if (requestParameters == null)
                 throw new ArgumentNullException(nameof(requestParameters));
 
-            var requestUrl = GenerateApiUrl(ArticleEndpoint.Details);
-            var parameters = GetDetailsParameters(requestParameters);
-            var json = await _wikiaHttpClient.Get(requestUrl, parameters);
+            var json = await ArticleRequest(ArticleEndpoint.Details, () => GetDetailsParameters(requestParameters));
 
-            return JsonHelper.Deserialize<ExpandedArticleResultSet>(json);
+            return Deserialize<ExpandedArticleResultSet>(json);
+        }
+
+        public Task<UnexpandedListArticleResultSet> AlphabeticalList(string category)
+        {
+            return AlphabeticalList(new ArticleListRequestParameters {Category = category});
+        }
+
+        public async Task<UnexpandedListArticleResultSet> AlphabeticalList(ArticleListRequestParameters requestParameters)
+        {
+            if (requestParameters == null)
+                throw new ArgumentNullException(nameof(requestParameters));
+
+            var json = await ArticleRequest(ArticleEndpoint.List, () => GetAlphabeticalListParameters(requestParameters));
+
+            return Deserialize<UnexpandedListArticleResultSet>(json);
+
+        }
+
+        public Task<string> ArticleRequest(ArticleEndpoint endpoint, Func<IDictionary<string, string>> getParameters)
+        {
+            var requestUrl = GenerateApiUrl(endpoint);
+            var parameters = getParameters.Invoke();
+            return WebClient(requestUrl, parameters);
         }
 
         #region private helpers
@@ -93,9 +113,38 @@ namespace wikia.Api
             return parameters;
         }
 
+        private IDictionary<string, string> GetAlphabeticalListParameters(ArticleListRequestParameters requestParameters)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                ["limit"] = requestParameters.Limit.ToString(),
+            };
+
+            if (!string.IsNullOrEmpty(requestParameters.Category))
+                parameters["category"] = requestParameters.Category;
+
+            if (requestParameters.Namespaces.Any())
+                parameters["namespaces"] = string.Join(",", requestParameters.Namespaces);
+
+            if (!string.IsNullOrEmpty(requestParameters.Offset))
+                parameters["offset"] = requestParameters.Offset;
+
+            return parameters;
+        }
+
         private string GenerateApiUrl(ArticleEndpoint endpoint)
         {
             return UrlHelper.GenerateApiUrl(_wikiApiUrl, Endpoints[endpoint]);
+        }
+
+        private static T Deserialize<T>(string json)
+        {
+            return JsonHelper.Deserialize<T>(json);
+        }
+
+        private async Task<string> WebClient(string requestUrl, IDictionary<string, string> parameters)
+        {
+            return await _wikiaHttpClient.Get(requestUrl, parameters);
         }
 
         #endregion

@@ -57,6 +57,9 @@
     <Compile Include="Models\Activity\ActivityRequestParameters.cs" />
     <Compile Include="Models\Activity\ActivityResponseItem.cs" />
     <Compile Include="Models\Activity\ActivityResponseResult.cs" />
+    <Compile Include="Models\Article\AlphabeticalList\UnexpandedArticle.cs" />
+    <Compile Include="Models\Article\AlphabeticalList\UnexpandedListArticleResultSet.cs" />
+    <Compile Include="Models\Article\ArticleListRequestParameters.cs" />
     <Compile Include="Models\Article\Details\ArticleDetailsRequestParameters.cs" />
     <Compile Include="Models\Article\Details\ExpandedArticle.cs" />
     <Compile Include="Models\Article\Details\ExpandedArticleResultSet.cs" />

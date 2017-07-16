@@ -8,8 +8,8 @@ namespace wikia.integration.tests.WikiaArticleTests
     [TestFixture]
     public class DetailEndpointTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.SimpleTestUrlData))]
-        public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Deserialize_Article_Details(string domainUrl, int articleId)
+        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleIdTestUrlData))]
+        public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Deserialize_Article_Details_Json(string domainUrl, int articleId)
         {
             // Arrange
             var sut = new WikiArticle(domainUrl);

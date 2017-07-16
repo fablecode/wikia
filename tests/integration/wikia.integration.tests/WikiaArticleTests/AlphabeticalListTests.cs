@@ -6,16 +6,16 @@ using wikia.Api;
 namespace wikia.integration.tests.WikiaArticleTests
 {
     [TestFixture]
-    public class SimpleEndpointTests
+    public class AlphabeticalListTests
     {
-        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleIdTestUrlData))]
-        public async Task Given_A_DomainUrl_And_ArticleId_Should_Successfully_Retrieve_Domain_Simple_ArticleInfo(string domainUrl, int articleId)
+        [TestCaseSource(typeof(WikiaArticleTestData), nameof(WikiaArticleTestData.ArticleCategoryTestData))]
+        public async Task Given_A_DomainUrl_And_An_Article_Category_Should_Successfully_Retrieve_ArticleList(string domainUrl, string category)
         {
             // Arrange
             var sut = new WikiArticle(domainUrl);
 
             // Act
-            var result = await sut.Simple(articleId);
+            var result = await sut.AlphabeticalList(category);
 
             // Assert
             result.Should().NotBeNull();

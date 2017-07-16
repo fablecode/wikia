@@ -57,6 +57,7 @@
     <Compile Include="UrlHelperTests\GenerateApiUrlTests.cs" />
     <Compile Include="UrlHelperTests\GenerateUrlTests.cs" />
     <Compile Include="UrlHelperTests\IsValidUrlTests.cs" />
+    <Compile Include="WikiaArticleTests\AlphabeticalListTests.cs" />
     <Compile Include="WikiaArticleTests\DetailEndpointTests.cs" />
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
     <Compile Include="WikiActivityTests.cs" />

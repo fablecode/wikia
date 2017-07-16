@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using wikia.Api;
+using wikia.Models.Article;
+using wikia.Models.Article.AlphabeticalList;
 using wikia.Models.Article.Details;
 
 namespace wikia.unit.tests.WikiaArticleTests
 {
     [TestFixture]
-    public class DetailEndpointTests
+    public class AlphabeticalListTests
     {
         private IWikiArticle _sut;
 
@@ -26,7 +28,7 @@ namespace wikia.unit.tests.WikiaArticleTests
             // Arrange
 
             // Act
-            Func<Task<ExpandedArticleResultSet>> act = () => _sut.Details((ArticleDetailsRequestParameters) null);
+            Func<Task<UnexpandedListArticleResultSet>> act = () => _sut.AlphabeticalList(default(ArticleListRequestParameters));
 
             // Assert
             act.ShouldThrow<ArgumentNullException>();

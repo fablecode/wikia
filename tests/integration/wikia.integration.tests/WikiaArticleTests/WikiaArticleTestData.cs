@@ -5,7 +5,7 @@ namespace wikia.integration.tests.WikiaArticleTests
 {
     public static class WikiaArticleTestData
     {
-        public static IEnumerable<TestCaseData> SimpleTestUrlData
+        public static IEnumerable<TestCaseData> ArticleIdTestUrlData
         {
             get
             {
@@ -26,5 +26,28 @@ namespace wikia.integration.tests.WikiaArticleTests
                 );
             }
         }
+
+        public static IEnumerable<TestCaseData> ArticleCategoryTestData
+        {
+            get
+            {
+                yield return new TestCaseData
+                (
+                    "http://yugioh.wikia.com",
+                    "Card_Tips" // yugioh tips category
+                );
+                yield return new TestCaseData
+                (
+                    "http://naruto.wikia.com/",
+                    "Characters" // naruto characters
+                );
+                yield return new TestCaseData
+                (
+                    "http://elderscrolls.wikia.com/",
+                    "Classes" // Skyrim classes
+                );
+            }
+        }
+
     }
 }
