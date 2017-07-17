@@ -51,11 +51,13 @@
     <Compile Include="Api\IWikiRelatedPages.cs" />
     <Compile Include="Api\IWikiSearch.cs" />
     <Compile Include="Api\IWikiSearchSuggestions.cs" />
+    <Compile Include="Api\IWikiUser.cs" />
     <Compile Include="Api\WikiMercury.cs" />
     <Compile Include="Api\WikiNavigation.cs" />
     <Compile Include="Api\WikiRelatedPages.cs" />
     <Compile Include="Api\WikiSearch.cs" />
     <Compile Include="Api\WikiSearchSuggestions.cs" />
+    <Compile Include="Api\WikiUser.cs" />
     <Compile Include="Models\Article\NewArticles\Creator.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleRequestParameters.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleResultSet.cs" />
@@ -101,6 +103,9 @@
     <Compile Include="Models\Search\LocalWikiSearchResult.cs" />
     <Compile Include="Models\Search\LocalWikiSearchResultSet.cs" />
     <Compile Include="Models\Search\SearchListRequestParameter.cs" />
+    <Compile Include="Models\User\UserElement.cs" />
+    <Compile Include="Models\User\UserRequestParameters.cs" />
+    <Compile Include="Models\User\UserResultSet.cs" />
     <Compile Include="Models\WikiaItem.cs" />
     <Compile Include="Models\Mercury\WikiData.cs" />
     <Compile Include="Models\Mercury\WikiDataContainer.cs" />

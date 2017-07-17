@@ -49,7 +49,6 @@ namespace wikia.integration.tests
             }
         }
 
-
         public static IEnumerable<TestCaseData> ArticleCategoryTestData
         {
             get
@@ -91,6 +90,27 @@ namespace wikia.integration.tests
             }
         }
 
+        public static IEnumerable<TestCaseData> UserTestData
+        {
+            get
+            {
+                yield return new TestCaseData
+                (
+                    "http://yugioh.wikia.com",
+                    "166269" // user id
+                );
+                yield return new TestCaseData
+                (
+                    "http://naruto.wikia.com/",
+                    "1236002" // User id
+                );
+                yield return new TestCaseData
+                (
+                    "http://elderscrolls.wikia.com/",
+                    "32045548" // User id
+                );
+            }
+        }
 
     }
 }
