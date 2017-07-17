@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mercury\WikiVariablesTests.cs" />
-    <Compile Include="Navigation\NavigationLinksTests.cs" />
+    <Compile Include="MercuryTests\WikiVariablesTests.cs" />
+    <Compile Include="NavigationTests\NavigationLinksTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchSuggestionsTests\SuggestedPhrasesTests.cs" />
     <Compile Include="WikiaArticleTests\NewArticleTests.cs" />
     <Compile Include="WikiaArticleTests\PageListTests.cs" />
     <Compile Include="WikiaArticleTests\AlphabeticalListTests.cs" />
@@ -60,7 +61,7 @@
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
     <Compile Include="WikiaTestData.cs" />
     <Compile Include="WikiRelatedPagesTests\ArticlesTests.cs" />
-    <Compile Include="WikiSearch\SearchList.cs" />
+    <Compile Include="WikiSearchTests\SearchList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

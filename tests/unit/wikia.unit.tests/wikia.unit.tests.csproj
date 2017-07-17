@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchSuggestionsTests\SuggestedPhrasesTests.cs" />
     <Compile Include="UrlHelperTests\GenerateApiUrlTests.cs" />
     <Compile Include="UrlHelperTests\GenerateUrlTests.cs" />
     <Compile Include="UrlHelperTests\IsValidUrlTests.cs" />
@@ -64,8 +65,8 @@
     <Compile Include="WikiaArticleTests\PopularArticlesTests.cs" />
     <Compile Include="WikiaArticleTests\SimpleEndpointTests.cs" />
     <Compile Include="WikiActivityTests.cs" />
-    <Compile Include="WikiRelatedPages\ArticlesTests.cs" />
-    <Compile Include="WikiSearch\SearchList.cs" />
+    <Compile Include="WikiRelatedPagesTests\ArticlesTests.cs" />
+    <Compile Include="WikiSearchTests\SearchList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

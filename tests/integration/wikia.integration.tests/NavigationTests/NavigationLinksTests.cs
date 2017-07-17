@@ -2,9 +2,8 @@
 using FluentAssertions;
 using NUnit.Framework;
 using wikia.Api;
-using wikia.integration.tests.WikiaArticleTests;
 
-namespace wikia.integration.tests.Navigation
+namespace wikia.integration.tests.NavigationTests
 {
     [TestFixture]
     public class NavigationLinksTests

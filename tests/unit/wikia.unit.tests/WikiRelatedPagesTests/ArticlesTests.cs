@@ -2,20 +2,21 @@
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
+using wikia.Api;
 using wikia.Models.RelatedPages;
 
-namespace wikia.unit.tests.WikiRelatedPages
+namespace wikia.unit.tests.WikiRelatedPagesTests
 {
     public class ArticlesTests
     {
-        private Api.WikiRelatedPages _sut;
+        private WikiRelatedPages _sut;
 
         private string _domainUrl = "http://yugioh.wikia.com";
 
         [SetUp]
         public void SetUp()
         {
-            _sut = new Api.WikiRelatedPages(_domainUrl);
+            _sut = new WikiRelatedPages(_domainUrl);
         }
 
         [Test]

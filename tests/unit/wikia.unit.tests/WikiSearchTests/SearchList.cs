@@ -2,21 +2,22 @@
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
+using wikia.Api;
 using wikia.Models.Search;
 
-namespace wikia.unit.tests.WikiSearch
+namespace wikia.unit.tests.WikiSearchTests
 {
     [TestFixture]
     public class SearchList
     {
-        private Api.IWikiSearch _sut;
+        private IWikiSearch _sut;
 
         private string _domainUrl = "http://yugioh.wikia.com";
 
         [SetUp]
         public void SetUp()
         {
-            _sut = new Api.WikiSearch(_domainUrl);
+            _sut = new WikiSearch(_domainUrl);
         }
 
         [Test]
