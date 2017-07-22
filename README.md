@@ -1,7 +1,7 @@
 
 # Wikia
 
-![alt text](https://ci.appveyor.com/api/projects/status/jaf1qdaqbjrsryuw/branch/master?svg=true "AppVeyor build status")    ![alt text](https://fablecode.visualstudio.com/_apis/public/build/definitions/81011f39-c070-4b51-8e1b-e56bfe2106c8/1/badge "Visual studio team services build status") 
+![alt text](https://fablecode.visualstudio.com/_apis/public/build/definitions/81011f39-c070-4b51-8e1b-e56bfe2106c8/1/badge "Visual studio team services build status") 
 
 Wikia is a C# library that makes it easy to access Wiki website data.
 
