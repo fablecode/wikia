@@ -11,6 +11,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>Copyright 2017</copyright>
-    <tags>wikia c-sharp appveyor</tags>
+    <tags>wikia c-sharp VSTS(Visual Studio Team Services)</tags>
   </metadata>
 </package>
