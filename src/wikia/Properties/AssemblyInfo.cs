@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Wikia")]
-[assembly: AssemblyDescription("Wikia is a C# library that makes it easy to access Wiki website data.")]
+[assembly: AssemblyDescription("Wikia is a C# library that makes it easy to access Wiki data.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("wikia")]
