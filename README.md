@@ -39,7 +39,7 @@ var result = articles.NewArticles();
 
 ## Endpoints
 
-For a list of all wikia endpoints, you should use {wikidomain}/api/v1/ format.
+For a list of all endpoints, visit wiki api using {wikidomain}/api/v1/ format.
 
 Example: For Yugioh Wiki Api endpoints, i'd use [Yugioh Wikia](http://yugioh.wikia.com/api/v1/)
 
