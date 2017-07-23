@@ -18,7 +18,21 @@ namespace wikia.integration.tests.WikiaArticleTests
             var result = await sut.AlphabeticalList(category);
 
             // Assert
-            result.Should().NotBeNull();
+            result.Items.Should().NotBeEmpty();
         }
+
+        [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleCategoryTestData))]
+        public async Task Given_A_DomainUrl_And_An_Article_Category_UnexpandedListArticleResultSet_Should_Contain_Atleast_1_Item(string domainUrl, string category)
+        {
+            // Arrange
+            var sut = new WikiArticle(domainUrl);
+
+            // Act
+            var result = await sut.AlphabeticalList(category);
+
+            // Assert
+            result.Items.Should().NotBeEmpty();
+        }
+
     }
 }

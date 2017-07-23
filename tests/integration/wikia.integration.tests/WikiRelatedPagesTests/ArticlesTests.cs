@@ -12,7 +12,7 @@ namespace wikia.integration.tests.WikiRelatedPagesTests
         public class WikiVariablesTests
         {
             [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleIdTestUrlData))]
-            public async Task Given_A_DomainUrl__Should_Retrieve_Related_Articles(string domainUrl, int articleId)
+            public async Task Given_A_DomainUrl_And_An_ArticleId_Should_Successfully_Retrieve_SearchResults(string domainUrl, int articleId)
             {
                 // Arrange
                 var sut = new WikiRelatedPages(domainUrl);
@@ -21,7 +21,20 @@ namespace wikia.integration.tests.WikiRelatedPagesTests
                 var result = await sut.Articles(articleId);
 
                 // Assert
-                result.Should().NotBeNull();
+                result.Items.Should().NotBeEmpty();
+            }
+
+            [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.ArticleIdTestUrlData))]
+            public async Task Given_A_DomainUrl_An_ArticleId_RelatedPages_Should_Contain_Atleast_1_Item(string domainUrl, int articleId)
+            {
+                // Arrange
+                var sut = new WikiRelatedPages(domainUrl);
+
+                // Act
+                var result = await sut.Articles(articleId);
+
+                // Assert
+                result.Items.Should().NotBeEmpty();
             }
 
         }

@@ -18,6 +18,5 @@ namespace wikia.Models.Article.NewArticles
         /// Minimal value of article quality. Ranges from 0 to 99
         /// </summary>
         public int MinArticleQuality { get; set; } = 10;
-
     }
 }

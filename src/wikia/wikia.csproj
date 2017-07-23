@@ -59,6 +59,7 @@
     <Compile Include="Api\WikiSearchSuggestions.cs" />
     <Compile Include="Api\WikiUser.cs" />
     <Compile Include="Models\Article\NewArticles\Creator.cs" />
+    <Compile Include="Models\Article\NewArticles\NewArticle.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleRequestParameters.cs" />
     <Compile Include="Models\Article\NewArticles\NewArticleResultSet.cs" />
     <Compile Include="Api\WikiActivity.cs" />

@@ -24,7 +24,7 @@ namespace wikia.integration.tests.WikiaArticleTests
         }
 
         [TestCaseSource(typeof(WikiaTestData), nameof(WikiaTestData.WikiUrlsTestData))]
-        public async Task Given_A_DomainUrl_Should_Successfully_Retrieve_Detailed_Popular_Articles(string domainUrl)
+        public async Task Given_A_DomainUrl_PopularExpandedArticleResultSet_Should_Contain_Atleast_1_Item(string domainUrl)
         {
             // Arrange
             var sut = new WikiArticle(domainUrl);
@@ -33,7 +33,7 @@ namespace wikia.integration.tests.WikiaArticleTests
             var result = await sut.PopularArticleDetail(new PopularArticleRequestParameters());
 
             // Assert
-            result.Should().NotBeNull();
+            result.Items.Should().NotBeEmpty();
         }
     }
 }
