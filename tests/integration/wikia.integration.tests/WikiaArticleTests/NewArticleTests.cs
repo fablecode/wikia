@@ -16,7 +16,7 @@ namespace wikia.integration.tests.WikiaArticleTests
             var sut = new WikiArticle(domainUrl);
 
             // Act
-            var result = await sut.NewArticles(new NewArticleRequestParameters());
+            var result = await sut.NewArticles();
 
             // Assert
             result.Should().NotBeNull();
@@ -29,7 +29,7 @@ namespace wikia.integration.tests.WikiaArticleTests
             var sut = new WikiArticle(domainUrl);
 
             // Act
-            var result = await sut.NewArticles(new NewArticleRequestParameters());
+            var result = await sut.NewArticles();
 
             // Assert
             result.Items.Should().NotBeEmpty();

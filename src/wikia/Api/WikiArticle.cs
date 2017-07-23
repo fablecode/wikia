@@ -108,6 +108,11 @@ namespace wikia.Api
             return Deserialize<ExpandedListArticleResultSet>(json);
         }
 
+        public Task<NewArticleResultSet> NewArticles()
+        {
+            return NewArticles(new NewArticleRequestParameters());
+        }
+
         public async Task<NewArticleResultSet> NewArticles(NewArticleRequestParameters requestParameters)
         {
             if (requestParameters == null)

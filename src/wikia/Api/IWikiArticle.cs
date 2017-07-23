@@ -22,6 +22,7 @@ namespace wikia.Api
         Task<UnexpandedListArticleResultSet> AlphabeticalList(ArticleListRequestParameters requestParameters);
         Task<ExpandedListArticleResultSet> PageList(ArticleListRequestParameters requestParameters);
         Task<ExpandedListArticleResultSet> PageList(string category);
+        Task<NewArticleResultSet> NewArticles();
         Task<NewArticleResultSet> NewArticles(NewArticleRequestParameters requestParameters);
         Task<PopularListArticleResultSet> PopularArticleSimple(PopularArticleRequestParameters requestParameters);
         Task<PopularExpandedArticleResultSet> PopularArticleDetail(PopularArticleRequestParameters requestParameters);
