@@ -34,7 +34,7 @@ namespace wikia.Helper
                 IEnumerable<string> segments = 
                 (
                     from keyvalue in parameters
-                    select $"{Uri.EscapeUriString(keyvalue.Key)}={Uri.EscapeUriString(keyvalue.Value)}"
+                    select $"{keyvalue.Key}={keyvalue.Value}"
                 )
                 .ToArray();
 
