@@ -1,8 +1,7 @@
 
-# Wikia
-
 ![alt text](https://fablecode.visualstudio.com/_apis/public/build/definitions/81011f39-c070-4b51-8e1b-e56bfe2106c8/1/badge "Visual studio team services build status") 
 
+# Wikia
 Wikia is a C# library that makes it easy to access Wiki data.
 
 ## How?
