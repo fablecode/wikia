@@ -40,7 +40,9 @@ var result = articles.NewArticles();
 
 For a list of all endpoints, visit wiki api using {wikidomain}/api/v1/ format.
 
-Example: For Yugioh Wiki Api endpoints, i'd use [Yugioh Wikia](http://yugioh.wikia.com/api/v1/)
+Example: For Yugioh Wiki Api endpoints, i'd use [http://yugioh.wikia.com/api/v1/](http://yugioh.wikia.com/api/v1/).
+
+Notice the domain is "http://yugioh.wikia.com" and the suffix is "/api/v1/"
 
 ## License
 
