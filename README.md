@@ -45,6 +45,4 @@ Example: For Yugioh Wiki Api endpoints, i'd use [http://yugioh.wikia.com/api/v1/
 Notice the domain is "http://yugioh.wikia.com" and the suffix is "/api/v1/"
 
 ## License
-
-## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
